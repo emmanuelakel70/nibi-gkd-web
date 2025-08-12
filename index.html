@@ -2,72 +2,74 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>À propos - NIBI-GKB</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Accueil - NIBI-GKD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f1f5f9;
-      color: #1f2937;
-      scroll-behavior: smooth;
+      overflow: hidden;
     }
 
-    header, footer {
-      background-color: #0d47a1;
-      color: white;
-      padding: 0.5rem 1rem;
+    body {
+      display: flex;
+      flex-direction: column;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
+    main {
+      flex: 1;
+      overflow-y: auto;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #023e8a !important;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: white !important;
+    }
+
+    .nav-link:hover {
+      color: #f59e0b !important;
     }
 
     footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      font-size: 0.85rem;
-      padding: 0.5rem 1rem;
+      background-color: #023e8a;
+      color: white;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .content {
-      padding-top: 80px;
-      padding-bottom: 90px;
-    }
-
-    h2.section-title {
-      color: #1e3a8a;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    .hero {
+      background-color: #0077b6;
+      color: white;
+      padding: 60px 20px;
       text-align: center;
     }
 
-    .section-text {
-      font-size: 1.05rem;
-      text-align: justify;
-      margin-bottom: 1.5rem;
-    }
-
-    .img-card {
-      overflow: hidden;
+    .section-bg {
+      background-color: white;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      padding: 40px 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
-    .img-card img {
-      width: 100%;
-      height: auto;
+    .card img {
+      height: 180px;
       object-fit: cover;
-    }
-
-    .img-card:hover {
-      transform: scale(1.05);
     }
 
     .whatsapp-btn {
@@ -75,175 +77,198 @@
       align-items: center;
       background-color: #25D366;
       color: white;
-      padding: 8px 16px;
-      border-radius: 30px;
+      padding: 10px 20px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-      margin-top: 10px;
-    }
-
-    .whatsapp-btn img {
-      width: 20px;
-      margin-right: 10px;
+      font-weight: 500;
+      transition: background 0.3s;
     }
 
     .whatsapp-btn:hover {
-      background-color: #1ebe5d;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    nav a {
-      transition: color 0.3s ease;
-      font-size: 0.95rem;
-    }
-
-    nav a.active {
-      color: #ffc107 !important;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #90caf9 !important;
-    }
-
-    header small {
-      color: white !important;
-      font-size: 0.8rem;
-    }
-
-    /* 📱 Mobile adaptatif */
-    @media (max-width: 768px) {
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 0.5rem;
-      }
-      nav a {
-        margin: 0.2rem 0.5rem;
-        font-size: 0.85rem;
-      }
-      h1.h4 {
-        font-size: 1rem;
-        text-align: center;
-      }
-      .section-text {
-        font-size: 1rem;
-      }
+      background-color: #1ebe5b;
     }
   </style>
 </head>
 <body>
 
-  <!-- 🔽 EN-TÊTE -->
-  <header class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
-    <h1 class="h4 mb-0">
-      NIBI-GKD <br>
-      <small>Nerf & Intestin du Bâtiment & de l’Industrie</small>
-    </h1>
-    <nav>
-      <a href="index.html" class="text-white me-3 text-decoration-none">Accueil</a>
-      <a href="services.html" class="text-white me-3 text-decoration-none">Services</a>
-      <a href="produit.html" class="text-white me-3 text-decoration-none">Produits</a>
-      <a href="about.html" class="text-decoration-none active me-3">À propos</a>
-      <a href="contact.html" class="text-white ms-3 text-decoration-none">Contact</a>
-    </nav>
-  </header>
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <div class="container">
+    <a class="navbar-brand d-flex flex-column" href="index.html">
+      <span class="fs-4 fw-bold">NIBI-GKD</span>
+      <small class="fw-light" style="font-size: 0.8rem; line-height: 1;">
+        Nerf & Intestin du Bâtiment et de l'Industrie
+      </small>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="produit.html">Produits</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <!-- 🔽 MAIN CONTENT -->
-  <main class="container content fade-in">
-    <h2 class="section-title">À propos de notre entreprise</h2>
-    <p class="section-text">
-      Fondée avec passion et engagement, notre entreprise est spécialisée dans les domaines du bâtiment, du forage, de la plomberie, et de la maintenance industrielle. 
-      Basée à Lomé, nous accompagnons particuliers et professionnels dans la réalisation de projets durables et de qualité.
-    </p>
-    <p class="section-text">
-      Avec une équipe expérimentée et un savoir-faire reconnu, nous nous engageons à fournir des solutions innovantes adaptées aux besoins de chaque client. 
-      Transparence, professionnalisme et satisfaction client sont au cœur de notre démarche.
-    </p>
 
-    <div class="row g-4 mt-4">
-      <div class="col-12 col-md-4">
-        <div class="img-card">
-          <img src="images/machine.jpg" alt="Bâtiment" class="img-fluid">
+  <!-- Main scrollable content -->
+  <main class="container-fluid">
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>Entreprise Générale de Forage & Maintenance</h1>
+      <p class="mt-3">Bâtiment • Industrie • Matériaux • Études & Maintenance</p>
+    </div>
+
+    <!-- Produits -->
+    <div class="container section-bg">
+      <h2 class="text-center mb-4">Nos Produits</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/Electric.jpg" class="card-img-top" alt="Électronique">
+            <div class="card-body">
+              <h5 class="card-title">Électronique</h5>
+              <p>Composants & équipements professionnels de qualité.</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="img-card">
-          <img src="images/forage2.jpg" alt="Forage" class="img-fluid">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/Plombier.jpg" class="card-img-top" alt="Plomberie">
+            <div class="card-body">
+              <h5 class="card-title">Plomberie</h5>
+              <p>Robinetterie, tuyauterie, raccords, sanitaires, etc.</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="img-card">
-          <img src="images/plomberie.jpg" alt="Plomberie" class="img-fluid">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/c46c9ca6-081e-4cf7-982f-3f21d94f152f.jpg" class="card-img-top" alt="Peinture">
+            <div class="card-body">
+              <h5 class="card-title">Peinture</h5>
+              <p>Peintures décoratives, intérieures et extérieures.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 🔽 SECTION HONORIFIQUE -->
-    <section class="container my-5">
-      <h2 class="section-title">Distinction honorifique</h2>
-      <div class="row justify-content-center align-items-center">
-        <div class="col-12 col-md-6 text-center">
-          <img src="images/autgraphie 1.jpg" alt="Honneur" class="img-fluid rounded shadow" style="max-height: 450px; object-fit: cover;">
+    <!-- Services -->
+    <div class="container section-bg">
+      <h2 class="text-center mb-4">Nos Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/forage.jpg" class="card-img-top" alt="Forage">
+            <div class="card-body">
+              <h5 class="card-title">Forage</h5>
+              <p>Services de forage professionnels et sécurisés.</p>
+            </div>
+          </div>
         </div>
-        <div class="col-12 col-md-6 mt-4 mt-md-0">
-          <div class="p-4 bg-light rounded shadow-sm">
-            <h5 class="text-primary fw-bold">Entreprise d'Excellence</h5>
-            <p>
-              Reconnue pour son expertise dans les domaines de la <strong>plomberie moderne</strong>, du <strong>forage de précision</strong>,
-              de l’<strong>électricité industrielle</strong> et des <strong>solutions techniques innovantes</strong>, notre entreprise s’impose comme une
-              référence dans le secteur.
-            </p>
-            <p>
-              Grâce à une vision audacieuse et une gestion rigoureuse portée par son directeur,
-              <strong>M. GBONFOU K. Donald</strong>, l'entreprise a su bâtir une réputation solide fondée sur le professionnalisme, la rigueur et l'excellence opérationnelle.
-            </p>
-            <p class="mb-0">
-              C’est cette rigueur et cette passion du travail bien fait qui ont valu à l’entreprise cette <strong>distinction honorifique méritée</strong>.
-            </p>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/Batiment.jpg" class="card-img-top" alt="Bâtiment">
+            <div class="card-body">
+              <h5 class="card-title">Construction</h5>
+              <p>Construction et rénovation de bâtiments résidentiels et industriels.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/maintenance.jpg" class="card-img-top" alt="Maintenance">
+            <div class="card-body">
+              <h5 class="card-title">Maintenance</h5>
+              <p>Entretien et dépannage d'équipements techniques.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- À propos -->
+    <div class="container section-bg">
+      <h2 class="text-center mb-4">À propos de nous</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-5">
+          <div class="card h-100">
+            <img src="images/equipe.jpg" class="card-img-top" alt="Équipe">
+            <div class="card-body">
+              <h5 class="card-title">Notre Équipe</h5>
+              <p>Une équipe expérimentée au service de vos projets.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card h-100">
+            <img src="images/valeur.jpg" class="card-img-top" alt="Valeurs">
+            <div class="card-body">
+              <h5 class="card-title">Nos Valeurs</h5>
+              <p>Intégrité, qualité, innovation, et engagement client.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pourquoi nous choisir -->
+    <div class="container section-bg">
+      <h2 class="text-center mb-4">Pourquoi nous choisir ?</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/fibilité.jpg" class="card-img-top" alt="Fiabilité">
+            <div class="card-body">
+              <h5 class="card-title">Fiabilité</h5>
+              <p>Des projets livrés dans les délais avec rigueur.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/qualité.jpg" class="card-img-top" alt="Qualité">
+            <div class="card-body">
+              <h5 class="card-title">Qualité Garantie</h5>
+              <p>Des produits et services certifiés et durables.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="images/assistance.jpg" class="card-img-top" alt="Assistance">
+            <div class="card-body">
+              <h5 class="card-title">Support Client</h5>
+              <p>Un accompagnement personnalisé et à l'écoute.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infos & WhatsApp -->
+    <div class="container section-bg text-center">
+      <h2>Informations Générales</h2>
+      <p><strong>Directeur :</strong> M. GBONFOU K. Donald</p>
+      <p><strong>Localisation :</strong> N'kafu, derrière la station d'essence SOMAYAF Jean Paul 2; Lomé - Togo</p>
+      <a href="https://wa.me/22891684148" target="_blank" class="whatsapp-btn mt-3">
+        <i class="fab fa-whatsapp me-2"></i> Contact WhatsApp
+      </a>
+    </div>
   </main>
 
-  <!-- 🔽 PIED DE PAGE -->
-  <footer class="text-center">
-    <p class="mb-1">
-      Basée à N'kafu, derrière la station SOMAYAF Jean-Paul II - Lomé, Togo<br>
-      Directeur : M. GBONFOU K. Donald
-    </p>
-    <a href="https://wa.me/22891684148" class="whatsapp-btn">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
-      Contact WhatsApp
-    </a>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 NIBI-GKD - Tous droits réservés
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const appear = () => {
-      fadeEls.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-          el.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', appear);
-    window.addEventListener('load', appear);
-  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html>    
